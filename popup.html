@@ -1,19 +1,20 @@
+<!doctype html>
 <html>
 <head>
-	<title></title>
-	<style>
+	<meta http-equiv="content-script-type" content="text/javascript">
 
-	</style>
-</head>
+	<script type="text/javascript" src="scripts/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="scripts/script.js"> </script>
+	 </head>
 <body>
 	<h1>Encrypt and decrypt you message</h1>
 	<fieldset>
 		<legend>Manage you Key</legend>
-	<input type="text" />
-	<select name="key">
-		<option></option>
+	<label><input type="text" id="salt"/>10 charactere min</label>&nbsp;
+	<select name="key" id="keySalt">
+		 
 	</select>
-	<input type="button" id="storage" value="Save the key"/>
+	<button id="storage" >Save the key</button>
 	</fieldset>
 	<fieldset>
 		<legend>Add You message</legend>
