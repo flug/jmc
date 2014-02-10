@@ -1,28 +1,55 @@
 <!doctype html>
-<html>
-<head>
-	<meta http-equiv="content-script-type" content="text/javascript">
+<html class="no-js" lang="en">
+	<head>
+		<meta http-equiv="content-script-type" content="text/javascript">
 
-	<script type="text/javascript" src="scripts/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="scripts/script.js"> </script>
-	 </head>
-<body>
-	<h1>Encrypt and decrypt you message</h1>
-	<fieldset>
-		<legend>Manage you Key</legend>
-	<label><input type="text" id="salt"/>10 charactere min</label>&nbsp;
-	<select name="key" id="keySalt">
-		 
-	</select>
-	<button id="storage" >Save the key</button>
-	</fieldset>
-	<fieldset>
-		<legend>Add You message</legend>
-		<textarea></textarea>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="foundation/css/normalize.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="foundation/css/foundation.min.css" rel="stylesheet" type="text/css" media="all" />
 
-		<textarea readonly="readonly"></textarea>
 
-	</fieldset>
-	
-</body>
-</html>
+		<script type="text/javascript" src="scripts/jquery-2.1.0.min.js"></script>
+
+		<script type="text/javascript" src="foundation/js/vendor/modernizr.js"> </script>
+		<script type="text/javascript" src="foundation/js/foundation.min.js"> </script>
+
+
+		<script type="text/javascript" src="scripts/cryptico/jsbn.js"></script>
+		<script type="text/javascript" src="scripts/cryptico/random.js"></script>
+		<script type="text/javascript" src="scripts/cryptico/hash.js"></script>
+		<script type="text/javascript" src="scripts/cryptico/rsa.js"></script>
+		<script type="text/javascript" src="scripts/cryptico/aes.js"></script>
+		<script type="text/javascript" src="scripts/cryptico/api.js"></script>
+
+		<script type="text/javascript" src="scripts/script.js"> </script>
+		</head>
+		<!-- Jolie Message Crypté // JMC -->
+		<body style="width: 500px">
+		<div class="row">
+			<div class="large-12 columns">
+				<h3 class="subheader">Encrypt and decrypt you message</h3>
+				<fieldset>
+					<legend>Manage you Key</legend>
+					<label><input type="text" id="salt"/>10 charactere min</label>&nbsp;
+					<select name="key" id="keySalt">
+
+					</select>
+					<button id="storage" class="button tiny" >Save the key</button>
+				</fieldset>
+				<fieldset>
+					<legend>Add You message</legend>
+					<textarea id="message"></textarea>
+
+					<textarea readonly="readonly" id="encrypt"></textarea>
+
+					<textarea readonly="readonly" id="clair"></textarea>
+					<!--
+						<textarea  id="decrypt"></textarea>
+						<textarea  id="done"></textarea>
+					-->
+				</fieldset>
+			</div>
+		</div>
+
+		</body>
+		</html>
