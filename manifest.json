@@ -19,7 +19,16 @@
   "content_scripts": [
     {
       "matches": ["http://*/*"],
-      "js": [ "scripts/jquery-2.1.0.min.js", "scripts/script.js"]
+      "js": [ 
+          "scripts/jquery-2.1.0.min.js",
+          "scripts/script.js",
+          "scripts/cryptico/jsbn.js",
+          "scripts/cryptico/random.js",
+          "scripts/cryptico/hash.js",
+          "scripts/cryptico/rsa.js",
+          "scripts/cryptico/aes.js",
+          "scripts/cryptico/api.js",
+        ]
     }
   ]
 }
