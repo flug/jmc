@@ -1,11 +1,12 @@
 $(document).ready(function() {
 
-if(localStorage['salts'])
-{ 
-	  console.log(JSON.parse(localStorage.getItem("salts")).length);
-	     
-	getSalts();
-	//	$("#keySalt").append(new Option(item, i));
+  $(document).foundation();
+
+  if(localStorage['salts']) { 
+	       
+	  getSalts();
+	  //	$("#keySalt").append(new Option(item, i));
+	    
 	  
 	
 }
@@ -22,10 +23,10 @@ getSalts();
 });
 
 
-function getSalts()
-{
-	 for (var i = 0; i < JSON.parse(localStorage.getItem("salts")).length; i++){
-	    salt = JSON.parse(localStorage.getItem("salts"));
-	    $("#keySalt").append(new Option(salt[i], i));
-	}
+function getSalts() {
+  for (var i = 0; i < JSON.parse(localStorage.getItem("salts")).length; i++){
+    salt = JSON.parse(localStorage.getItem("salts"));
+    $("#keySalt").append(new Option(salt[i], i));
+  }
 }
+
