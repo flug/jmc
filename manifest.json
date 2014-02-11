@@ -28,7 +28,7 @@
           "scripts/cryptico/hash.js",
           "scripts/cryptico/rsa.js",
           "scripts/cryptico/aes.js",
-          "scripts/cryptico/api.js",
+          "scripts/cryptico/api.js"
         ]
     }
     ]
