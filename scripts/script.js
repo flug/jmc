@@ -27,6 +27,7 @@ $(document).ready(function() {
 
   $("#keySalt").change(function(){
 
+    RSAkey = '' ;
     PassPhrase = $('#keySalt option:selected').text();
 
     RSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
