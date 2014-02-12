@@ -50,15 +50,16 @@ $(document).ready(function() {
 
     $("#clair").val(DecryptionResult.plaintext);
   });
-/*
-$("#decrypt").bind("keypress keydown click keyup", function(e){
-console.log(PassPhrase);
 
-  decrypt = cryptico.decrypt(this.value, RSAkey);
-  $("#done").val(decrypt.plaintext);
+
+ 
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+      if (changeInfo.status == 'complete') {
+	        // Execute some script when the page is fully (DOM) ready
+	chrome.tabs.executeScript(null, {code:"init();"});
+      }
 });
-*/
-
+//
 });
 
 
@@ -69,3 +70,17 @@ function getSalts() {
   }
 }
 
+function init() {
+  //alert("ok");
+  var tag = $('*:contains("jmc:")').parent("div:first");
+var width = $(tag).css('width');
+var position = $(tag).position();
+  $(tag).append('<div style="text-align:center;position:absolute; z-index:1000; background: #fff; width:'+width+'; top:'+position.top +'px; left: '+position.left +'px">'
+      +'<p style="font-weight: bold; text-align:center">Décryptez le message</p>'
+      +' <input type="text" id="Akey" style="margin:auto; background: #fafafa; border-color: #999; border: 1px solid #ccc; color: rgba(0,0,0,0.75); display: block; font-size: 0.875rem; padding: 0.5rem; height: 2.3125rem; width: 75%;outline: none;border-radius: 0px;" />'
+
+      +'<br/>'
+      +'<button style="background-color: #007095;padding-top: 0.625rem; padding-right: 1.25rem; padding-bottom: 0.6875rem; padding-left: 1.25rem; font-size: 0.6875rem; color: #fff; display: inline-block; border: 1px solid #007095 ">Décrypter</button>'
+      +'</div>');
+
+}
