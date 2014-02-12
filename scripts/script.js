@@ -39,7 +39,7 @@ $(document).ready(function() {
   var PlainText;
   var EncryptionResult;
   var DecryptionResult;
-  $('#message').bind("keypress keydown click keyup", function(e){
+  $('#message').bind("keypress keydown keyup", function(e){
     PlainText = this.value; 
     EncryptionResult = cryptico.encrypt(PlainText, PublicKeyString);
 
