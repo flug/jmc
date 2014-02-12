@@ -46,7 +46,7 @@ $(document).ready(function() {
     DecryptionResult = cryptico.decrypt(EncryptionResult.cipher, RSAkey);
 
 
-    $("#encrypt").val(EncryptionResult.cipher);
+    $("#encrypt").val("jmc:"+EncryptionResult.cipher);
 
     $("#clair").val(DecryptionResult.plaintext);
   });
