@@ -71,7 +71,7 @@ function getSalts() {
 }
 
 function init() {
-  //alert("ok");
+
   var tag = $('*:contains("jmc:")').parents().first();
   var width = $(tag).css('width');
   var position = $(tag).position();
