@@ -72,10 +72,10 @@ function getSalts() {
 
 function init() {
   //alert("ok");
-  var tag = $('*:contains("jmc:")').parent("div:first");
+  var tag = $('*:contains("jmc:")').parents().first();
   var width = $(tag).css('width');
   var position = $(tag).position();
-  $(tag).append('<div style="text-align:center;position:absolute; z-index:1000; background: #fff; width:'+width+'; top:'+position.top +'px; left: '+position.left +'px">'
+  $(tag).before('<div style="text-align:center;position:absolute; z-index:1000; background: #fff; width:'+width+'; top:'+position.top +'px; left: '+position.left +'px">'
       +'<p style="font-weight: bold; text-align:center">Décryptez le message</p>'
       +' <input type="text" id="Akey" style="margin:auto; background: #fafafa; border-color: #999; border: 1px solid #ccc; color: rgba(0,0,0,0.75); display: block; font-size: 0.875rem; padding: 0.5rem; height: 2.3125rem; width: 75%;outline: none;border-radius: 0px;" />'
 
