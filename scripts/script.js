@@ -75,7 +75,7 @@ function init() {
   var position = null ; 
   var jmc = null ;
 
-   $('*:contains("jmc:")').each(function(){
+  $('*:contains("jmc:")').each(function(){
     width = $(this).css('width');
     position = $(this).position();
     jmc =  $(this).last().text().trim();
@@ -86,9 +86,9 @@ function init() {
       +'<br/>'
       +'<button style="background-color: #007095;padding-top: 0.625rem; padding-right: 1.25rem; padding-bottom: 0.6875rem; padding-left: 1.25rem; font-size: 0.6875rem; color: #fff; display: inline-block; border: 1px solid #007095 " id="action_message" >Déchiffrer</button>'
       +'</div>');
-   });
+  });
 
-   $('<script type="text/javascript"> var jmc ="'+jmc+'"; $("#action_message").on("click", function(){alert(jmc);}); </'+'script>').appendTo(document.body);
+  $('<script type="text/javascript"> var jmc ="'+jmc+'"; $("#action_message").on("click", function(){alert(jmc);}); </'+'script>').appendTo(document.body);
 
 }
 
