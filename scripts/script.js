@@ -71,16 +71,24 @@ function getSalts() {
 }
 
 function init() {
+  var width  = null; 
+  var position = null ; 
+  var jmc = null ;
 
-  var tag = $('*:contains("jmc:")').parents().first();
-  var width = $(tag).css('width');
-  var position = $(tag).position();
-  $(tag).before('<div style="text-align:center;position:absolute; z-index:1000; background: #fff; width:'+width+'; top:'+position.top +'px; left: '+position.left +'px">'
+   $('*:contains("jmc:")').each(function(){
+    width = $(this).css('width');
+    position = $(this).position();
+    jmc =  $(this).last().text().trim();
+    $(this).html('<div style="text-align:center;position:absolute; z-index:1000; background: #fff; width:'+width+'; top:'+position.top +'px; left: '+position.left +'px">'
       +'<p style="font-weight: bold; text-align:center">Décryptez le message</p>'
       +' <input type="text" id="Akey" style="margin:auto; background: #fafafa; border-color: #999; border: 1px solid #ccc; color: rgba(0,0,0,0.75); display: block; font-size: 0.875rem; padding: 0.5rem; height: 2.3125rem; width: 75%;outline: none;border-radius: 0px;" />'
 
       +'<br/>'
-      +'<button style="background-color: #007095;padding-top: 0.625rem; padding-right: 1.25rem; padding-bottom: 0.6875rem; padding-left: 1.25rem; font-size: 0.6875rem; color: #fff; display: inline-block; border: 1px solid #007095 ">Décrypter</button>'
+      +'<button style="background-color: #007095;padding-top: 0.625rem; padding-right: 1.25rem; padding-bottom: 0.6875rem; padding-left: 1.25rem; font-size: 0.6875rem; color: #fff; display: inline-block; border: 1px solid #007095 " id="action_message" >Déchiffrer</button>'
       +'</div>');
+   });
+
+   $('<script type="text/javascript"> var jmc ="'+jmc+'"; $("#action_message").on("click", function(){alert(jmc);}); </'+'script>').appendTo(document.body);
 
 }
+
