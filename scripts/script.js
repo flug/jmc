@@ -3,23 +3,23 @@ $(document).ready(function() {
   $(document).foundation();
 
   if(localStorage['salts']) { 
-	       
-	  getSalts();
-	  //	$("#keySalt").append(new Option(item, i));
-	    
-	  
+
+    getSalts();
+    //	$("#keySalt").append(new Option(item, i));
+
+
   }
-    $("#storage").on("click", function(){
+  $("#storage").on("click", function(){
 
-	  var salts = JSON.parse(localStorage.salts || "null") || [];
-	  if($("#salt").val().length > 10) {
-		  salts.push($.trim(($("#salt").val())));	
-	  }
+    var salts = JSON.parse(localStorage.salts || "null") || [];
+    if($("#salt").val().length > 10) {
+      salts.push($.trim(($("#salt").val())));	
+    }
 
-	  localStorage.salts = JSON.stringify(salts);
+    localStorage.salts = JSON.stringify(salts);
 
-      getSalts();
-   });
+    getSalts();
+  });
 
   var Bits = 2048;
   var PassPhrase = $('#keySalt option:selected').text();
@@ -52,14 +52,14 @@ $(document).ready(function() {
   });
 
 
- 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-      if (changeInfo.status == 'complete') {
-	        // Execute some script when the page is fully (DOM) ready
-	chrome.tabs.executeScript(null, {code:"init();"});
-      }
-});
-//
+
+  chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    if (changeInfo.status == 'complete') {
+      // Execute some script when the page is fully (DOM) ready
+      chrome.tabs.executeScript(null, {code:"init();"});
+    }
+  });
+  //
 });
 
 
