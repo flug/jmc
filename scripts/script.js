@@ -71,9 +71,9 @@ function getSalts() {
 }
 
 function init() {
-  var width  = null; 
-  var position = null ; 
-  var jmc = null ;
+  var width  = null;
+  var position = null ;
+  var jmc = null;
 
   $('*:contains("jmc:")').each(function(){
     width = $(this).css('width');
