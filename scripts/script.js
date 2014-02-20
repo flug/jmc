@@ -25,7 +25,7 @@ $(document).ready(function() {
   var PassPhrase = $('#keySalt option:selected').text();
   var RSAkey  ;
 
-  $("#keySalt").change(function(){
+  $("#keySalt").change(function () {
 
     RSAkey = '' ;
     PassPhrase = $('#keySalt option:selected').text();
