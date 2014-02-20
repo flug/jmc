@@ -88,7 +88,7 @@ function init() {
       +'</div>');
   });
 
-  $('<script type="text/javascript"> var jmc ="'+jmc+'"; $("#action_message").on("click", function(){alert(jmc);}); </'+'script>').appendTo(document.body);
+  $('<div id="crypto_message" style="display:none">'+jmc+'</'+'div>').appendTo(document.body);
 
 
   addCryptoScript();
