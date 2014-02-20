@@ -90,5 +90,26 @@ function init() {
 
   $('<script type="text/javascript"> var jmc ="'+jmc+'"; $("#action_message").on("click", function(){alert(jmc);}); </'+'script>').appendTo(document.body);
 
+
+  addCryptoScript();
 }
 
+
+
+function addScript(scriptURL, onload) {
+  var script = document.createElement('script');
+  script.setAttribute("type", "application/javascript");
+  script.setAttribute("src", scriptURL);
+  if (onload) script.onload = onload;
+  document.documentElement.appendChild(script);
+}
+
+function addCryptoScript(){
+  addScript(chrome.extension.getURL("scripts/cryptico/jsbn.js"));
+  addScript(chrome.extension.getURL("scripts/cryptico/random.js"));
+  addScript(chrome.extension.getURL("scripts/cryptico/hash.js"));
+  addScript(chrome.extension.getURL("scripts/cryptico/rsa.js"));
+  addScript(chrome.extension.getURL("scripts/cryptico/aes.js"));
+  addScript(chrome.extension.getURL("scripts/cryptico/api.js"));
+  addScript(chrome.extension.getURL("scripts/cryptico/client.js"));
+}

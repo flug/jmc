@@ -1,37 +1,47 @@
 ﻿{
-    "name": "JMC",
-    "description": "Cryptez vos messages",
-    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-      "manifest_version": 2,
-      "version": "1.0" ,
-    "icons": {
-        "128": "icon.png"
-    }, 
-    "permissions":[
+  "name": "JMC",
+  "description": "Cryptez vos messages",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "manifest_version": 2,
+  "version": "1.0" ,
+  "icons": {
+    "128": "icon.png"
+  }, 
+  "permissions":[
     "storage", 
-    "activeTab",
-    "clipboardWrite",
-    "tabs",
-     "webRequest",
-       "*://*/*"
+  "activeTab",
+  "clipboardWrite",
+  "tabs",
+  "webRequest",
+  "*://*/*"
     ],
-"browser_action": {
+  "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
+  "web_accessible_resources": [
+      "scripts/cryptico/jsbn.js",
+      "scripts/cryptico/random.js",
+      "scripts/cryptico/hash.js",
+      "scripts/cryptico/rsa.js",
+      "scripts/cryptico/aes.js",
+      "scripts/cryptico/api.js", 
+      "scripts/cryptico/client.js"
+    ],
   "content_scripts": [
-    {
-      "matches": ["http://*/*"],
-      "js": [ 
-          "scripts/jquery-2.1.0.min.js",
-          "scripts/script.js",
-          "scripts/cryptico/jsbn.js",
-          "scripts/cryptico/random.js",
-          "scripts/cryptico/hash.js",
-          "scripts/cryptico/rsa.js",
-          "scripts/cryptico/aes.js",
-          "scripts/cryptico/api.js"
-        ]
-    }
-    ]
+  {
+    "matches": ["http://*/*"],
+    "js": [
+        "scripts/jquery-2.1.0.min.js",
+        "scripts/script.js",
+        "scripts/cryptico/jsbn.js",
+        "scripts/cryptico/random.js",
+        "scripts/cryptico/hash.js",
+        "scripts/cryptico/rsa.js",
+        "scripts/cryptico/aes.js",
+        "scripts/cryptico/api.js"
+      ],
+    "run_at": "document_start"
+  }
+  ]
 }
